@@ -15,7 +15,7 @@ jobs:
         features:
           - magicmirror
         baseImage:
-          - alpine:latest
+          - mcr.microsoft.com/devcontainers/base:alpine
           - ubuntu:latest
           - mcr.microsoft.com/devcontainers/base:ubuntu
     steps:
