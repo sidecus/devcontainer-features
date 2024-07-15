@@ -1,7 +1,7 @@
 {
     "name": "Automated devcontainer mirror setup",
     "id": "magicmirror",
-    "version": "0.0.9",
+    "version": "1.0.0",
     "description": "A devcontainer feature that setups mirrors for package managers automatically",
     "options": {
         "pypi_mirror": {
