@@ -1,0 +1,35 @@
+{
+    "name": "Automated devcontainer mirror setup",
+    "id": "magicmirror",
+    "version": "0.0.9",
+    "description": "A devcontainer feature that setups mirrors for package managers automatically",
+    "options": {
+        "pypi_mirror": {
+            "type": "string",
+            "proposals": [
+                "https://mirrors.bfsu.edu.cn/pypi/web/simple/"
+            ],
+            "default": "",
+            "description": "Pypi mirror url"
+        },
+        "ubuntu_mirror": {
+            "type": "string",
+            "proposals": [
+                "mirrors.bfsu.edu.cn"
+            ],
+            "default": "",
+            "description": "Ubuntu mirror"
+        },
+        "apk_mirror": {
+            "type": "string",
+            "proposals": [
+                "mirrors.tuna.tsinghua.edu.cn"
+            ],
+            "default": "",
+            "description": "Ubuntu mirror"
+        }
+    },
+    "installsAfter": [
+        "ghcr.io/devcontainers/features/common-utils"
+    ]
+}

@@ -1,0 +1,26 @@
+{
+    "ubuntu": {
+        "image": "mcr.microsoft.com/devcontainers/base:ubuntu",
+        "features": {
+            "magicmirror": {
+                "ubuntu_mirror": "dummy-ubuntu-mirror"
+            }
+        }
+    },
+    "pypi": {
+        "image": "mcr.microsoft.com/devcontainers/base:ubuntu",
+        "features": {
+            "magicmirror": {
+                "pypi_mirror": "dummy-pypi-mirror"
+            }
+        }
+    },
+    "apk": {
+        "image": "mcr.microsoft.com/devcontainers/base:alpine",
+        "features": {
+            "magicmirror": {
+                "apk_mirror": "dummy-apk-repo"
+            }
+        }
+    }
+}
