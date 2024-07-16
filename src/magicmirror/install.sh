@@ -18,7 +18,7 @@ echo "The effective dev container containerUser's home directory is '$_CONTAINER
 OS=$(awk -F= '/^NAME/{print $2}' /etc/os-release)
 echo "Target OS is ${OS}"
 
-# Ubuntu mirror. TODO[sidecus]: Check this is Ubuntu
+# Ubuntu mirror, only run when OS is Ubuntu
 UBUNTU_MIRROR=${UBUNTU_MIRROR:-""}
 echo "UBUNTU_MIRROR: $UBUNTU_MIRROR"
 if [ "${OS}" = '"Ubuntu"' ] && [ -n "${UBUNTU_MIRROR}" ]; then
@@ -38,7 +38,7 @@ if [ -n "${PYPI_MIRROR}" ]; then
     echo "index-url = ${PYPI_MIRROR}" >> /etc/pip.conf
 fi
 
-# Alpine apk mirror.
+# Alpine apk mirror, only run when OS is Alpine
 APK_MIRROR=${APK_MIRROR:-""}
 echo "APK_MIRROR: $APK_MIRROR"
 if [ "${OS}" = '"Alpine Linux"' ] && [ -n "${APK_MIRROR}" ]; then

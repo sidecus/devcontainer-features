@@ -10,7 +10,7 @@
                 "https://mirrors.bfsu.edu.cn/pypi/web/simple/"
             ],
             "default": "",
-            "description": "Pypi mirror url"
+            "description": "Python Pypi mirror"
         },
         "ubuntu_mirror": {
             "type": "string",
@@ -26,7 +26,7 @@
                 "mirrors.tuna.tsinghua.edu.cn"
             ],
             "default": "",
-            "description": "Ubuntu mirror"
+            "description": "Alpine apk mirror"
         }
     },
     "installsAfter": [
