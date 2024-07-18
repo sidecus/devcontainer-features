@@ -1,7 +1,7 @@
 
-# Automated devcontainer mirror setup (magicmirror)
+# MagicMirror (magicmirror)
 
-A devcontainer feature that setups mirrors for package managers automatically
+Automatic mirror setup for package managers like apt, pypi, apk etc.
 
 ## Example Usage
 
