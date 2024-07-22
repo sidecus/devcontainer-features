@@ -10,7 +10,7 @@ source dev-container-features-test-lib
 
 # Feature-specific tests
 # The 'check' command comes from the dev-container-features-test-lib.
-check "test pypi mirror" bash -c "cat /etc/pip.conf | grep 'index-url = dummy-pypi-mirror'"
+check "test pypi mirror" bash -c "cat /etc/pip.conf | grep 'index-url = https://dummy-pypi-mirror.com/pypi/web/simple/'"
 
 # Report results
 # If any of the checks above exited with a non-zero exit code, the test will fail.
