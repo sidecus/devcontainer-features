@@ -18,6 +18,7 @@ Automatic mirror setup for package managers like apt, pypi, apk etc.
 | pypi_mirror | Python Pypi mirror | string | - |
 | ubuntu_mirror | Ubuntu mirror | string | - |
 | apk_mirror | Alpine apk mirror | string | - |
+| huggingface_mirror | Huggingface mirror | string | - |
 
 
 
