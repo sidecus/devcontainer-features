@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # This test file will be executed against one of the scenarios devcontainer.json test that
-# includes the 'color' feature with "greeting": "hello" option.
+# includes the 'magicmirror' feature with "huggingface_mirror" option.
 
 set -e
 
@@ -10,7 +10,7 @@ source dev-container-features-test-lib
 
 # Feature-specific tests
 # The 'check' command comes from the dev-container-features-test-lib.
-check "test pypi mirror" bash -c "cat /etc/pip.conf | grep 'index-url = https://dummy-pypi-mirror.com/pypi/web/simple/'"
+check "test HF mirror" bash -c '[ "${HF_ENDPOINT}"="https://dummy-hf-mirror.com" ];'
 
 # Report results
 # If any of the checks above exited with a non-zero exit code, the test will fail.
