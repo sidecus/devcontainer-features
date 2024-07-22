@@ -14,6 +14,7 @@ Automatically setup package manager mirrors, including ubuntu, pypi and apk etc.
             "ubuntu_mirror": "<your-ubuntu-mirror-domain>",  // only applicable to Ubuntu based images
             "apk_mirror": "<your-alpine-apk-mirror-domain>", // only applicable to Alpine based images
             "pypi_mirror": "https://<your-pypi-mirror-domain>/pypi/web/simple/",
+            "huggingface_mirror": "https://dummy-hf-mirror.com"
         }
     }
 }

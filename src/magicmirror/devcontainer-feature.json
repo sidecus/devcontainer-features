@@ -27,6 +27,14 @@
             ],
             "default": "",
             "description": "Alpine apk mirror"
+        },
+        "huggingface_mirror": {
+            "type": "string",
+            "proposals": [
+                "https://hf-mirror.com"
+            ],
+            "default": "",
+            "description": "Huggingface mirror"
         }
     },
     "installsAfter": [

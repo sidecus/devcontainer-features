@@ -3,7 +3,7 @@
         "image": "mcr.microsoft.com/devcontainers/base:ubuntu",
         "features": {
             "magicmirror": {
-                "ubuntu_mirror": "dummy-ubuntu-mirror"
+                "ubuntu_mirror": "dummy-ubuntu-mirror.com"
             }
         }
     },
@@ -11,7 +11,7 @@
         "image": "mcr.microsoft.com/devcontainers/base:ubuntu",
         "features": {
             "magicmirror": {
-                "pypi_mirror": "dummy-pypi-mirror"
+                "pypi_mirror": "https://dummy-pypi-mirror.com/pypi/web/simple/"
             }
         }
     },
@@ -19,7 +19,15 @@
         "image": "mcr.microsoft.com/devcontainers/base:alpine",
         "features": {
             "magicmirror": {
-                "apk_mirror": "dummy-apk-repo"
+                "apk_mirror": "dummy-apk-repo.com"
+            }
+        }
+    },
+    "hf": {
+        "image": "mcr.microsoft.com/devcontainers/base:ubuntu",
+        "features": {
+            "magicmirror": {
+                "huggingface_mirror": "https://dummy-hf-mirror.com"
             }
         }
     }
