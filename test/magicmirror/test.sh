@@ -48,7 +48,7 @@ source dev-container-features-test-lib
 check "test no ubuntu mirror" bash -c "! (test -f /etc/apt/sources.list.mm.bak)"
 check "test no pypi mirror" bash -c "! (test -f /etc/pip.conf.mm.bak)"
 check "test no apk mirror" bash -c "! (test -f /etc/apk/repositories.mm.bak)"
-check "test no huggingface mirror" bash -c "! (test -f /etc/environment.mm.bak) && (test -z \"${HF_ENDPOINT}\"))"
+check "test no huggingface mirror" bash -c "! (test -f /etc/environment.mm.bak) && (test -z \"${HF_ENDPOINT}\")"
 
 # Report results
 # If any of the checks above exited with a non-zero exit code, the test will fail.
