@@ -28,7 +28,7 @@ if [ "${OS}" = '"Ubuntu"' ] && [ -n "${UBUNTU_MIRROR}" ]; then
     sed -i "s/ports.ubuntu.com/${UBUNTU_MIRROR}/g" /etc/apt/sources.list
 fi
 
-# Pypi mirror. TODO[sidecus]: Check Python installation
+# Pypi mirror.
 PYPI_MIRROR=${PYPI_MIRROR:-""}
 echo "PYPI_MIRROR: $PYPI_MIRROR"
 if [ -n "${PYPI_MIRROR}" ]; then
@@ -53,6 +53,7 @@ echo "HUGGINGFACE_MIRROR: $HUGGINGFACE_MIRROR"
 if [ -n "${HUGGINGFACE_MIRROR}" ]; then
     echo "Enabling Huggingface mirror: ${HUGGINGFACE_MIRROR}"
     touch /etc/environment && cp /etc/environment /etc/environment.mm.bak
-    echo "HF_ENDPOINT=${HF_ENDPOINT}" >> /etc/environment
+    echo "HF_ENDPOINT=${HUGGINGFACE_MIRROR}" >> /etc/environment
+    # export the new env
     set -a; . /etc/environment; set +a;
 fi

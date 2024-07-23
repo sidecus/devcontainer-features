@@ -20,6 +20,7 @@
 # UBUNTU_MIRROR=""
 # PYPI_MIRROR=""
 # APK_MIRROR=""
+# HUGGINGFACE_MIRROR=""
 
 #
 # These scripts are run as 'root' by default. Although that can be changed
@@ -44,9 +45,10 @@ source dev-container-features-test-lib
 # Feature-specific tests
 # The 'check' command comes from the dev-container-features-test-lib. Syntax is...
 # check <LABEL> <cmd> [args...]
-check "test no ubuntu mirror" bash -c "! (test -e /etc/apt/sources.list.bak) && ! (cat /etc/apt/sources.list | grep 'mirrors.bfsu.edu.cn')"
-check "test no pypi mirror" bash -c "! (test -e /etc/pip.conf) || ! (cat /etc/pip.conf | grep 'mirrors.bfsu.edu.cn')"
-check "test no apk mirror" bash -c "! (test -e /etc/apk/repositories) || ! (cat /etc/apk/repositories | grep 'mirrors.tuna.tsinghua.edu.cn')"
+check "test no ubuntu mirror" bash -c "! (test -f /etc/apt/sources.list.mm.bak)"
+check "test no pypi mirror" bash -c "! (test -f /etc/pip.conf.mm.bak)"
+check "test no apk mirror" bash -c "! (test -f /etc/apk/repositories.mm.bak)"
+check "test no huggingface mirror" bash -c "! (test -f /etc/environment.mm.bak) && (test -z \"${HF_ENDPOINT}\"))"
 
 # Report results
 # If any of the checks above exited with a non-zero exit code, the test will fail.

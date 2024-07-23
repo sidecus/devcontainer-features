@@ -10,7 +10,7 @@ source dev-container-features-test-lib
 
 # Feature-specific tests
 # The 'check' command comes from the dev-container-features-test-lib.
-check "test HF mirror" bash -c '[ "${HF_ENDPOINT}"="https://dummy-hf-mirror.com" ];'
+check "test HF mirror" bash -c "test \"${HF_ENDPOINT}\" = \"https://dummy-hf-mirror.com\""
 
 # Report results
 # If any of the checks above exited with a non-zero exit code, the test will fail.
