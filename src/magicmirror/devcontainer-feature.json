@@ -1,7 +1,7 @@
 {
     "name": "MagicMirror",
     "id": "magicmirror",
-    "version": "1.0.2",
+    "version": "1.0.3",
     "description": "Automatic mirror setup for package managers like apt, pypi, apk etc.",
     "options": {
         "pypi_mirror": {
