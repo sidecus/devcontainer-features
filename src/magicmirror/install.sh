@@ -47,6 +47,13 @@ if [ "${OS}" = '"Alpine Linux"' ] && [ -n "${APK_MIRROR}" ]; then
     sed -i "s/dl-cdn.alpinelinux.org/${APK_MIRROR}/g" /etc/apk/repositories
 fi
 
+# add entrypoint script
+cat > /usr/local/bin/magicmirror.sh << EOF
+#!/bin/sh
+set -a; . /etc/environment; set +a;
+EOF
+chmod +x /usr/local/bin/magicmirror.sh
+
 # Set Huggingface mirror if it's provided
 HUGGINGFACE_MIRROR=${HUGGINGFACE_MIRROR:-""}
 echo "HUGGINGFACE_MIRROR: $HUGGINGFACE_MIRROR"
@@ -54,6 +61,4 @@ if [ -n "${HUGGINGFACE_MIRROR}" ]; then
     echo "Enabling Huggingface mirror: ${HUGGINGFACE_MIRROR}"
     touch /etc/environment && cp /etc/environment /etc/environment.mm.bak
     echo "HF_ENDPOINT=${HUGGINGFACE_MIRROR}" >> /etc/environment
-    # export the new env
-    set -a; . /etc/environment; set +a;
 fi
