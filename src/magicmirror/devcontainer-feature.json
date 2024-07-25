@@ -3,6 +3,10 @@
     "id": "magicmirror",
     "version": "1.0.3",
     "description": "Automatic mirror setup for package managers like apt, pypi, apk etc.",
+    "entrypoint": "/usr/local/bin/magicmirror.sh",
+    "installsAfter": [
+        "ghcr.io/devcontainers/features/common-utils"
+    ],
     "options": {
         "pypi_mirror": {
             "type": "string",
@@ -36,8 +40,5 @@
             "default": "",
             "description": "Huggingface mirror"
         }
-    },
-    "installsAfter": [
-        "ghcr.io/devcontainers/features/common-utils"
-    ]
+    }
 }
