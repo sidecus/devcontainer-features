@@ -50,7 +50,7 @@ fi
 # add entrypoint script
 cat > /usr/local/bin/magicmirror.sh << EOF
 #!/bin/sh
-set -a; . /etc/environment; set +a;
+echo "running magicmirror entrypoint"
 EOF
 chmod +x /usr/local/bin/magicmirror.sh
 
@@ -59,6 +59,6 @@ HUGGINGFACE_MIRROR=${HUGGINGFACE_MIRROR:-""}
 echo "HUGGINGFACE_MIRROR: $HUGGINGFACE_MIRROR"
 if [ -n "${HUGGINGFACE_MIRROR}" ]; then
     echo "Enabling Huggingface mirror: ${HUGGINGFACE_MIRROR}"
-    touch /etc/environment && cp /etc/environment /etc/environment.mm.bak
-    echo "HF_ENDPOINT=${HUGGINGFACE_MIRROR}" >> /etc/environment
+    echo "Injecting HF_ENDPOINT value setting into magicmirror.sh" 
+    echo "export HF_ENDPOINT=${HUGGINGFACE_MIRROR};echo \${HF_ENDPOINT}" >> /usr/local/bin/magicmirror.sh
 fi
